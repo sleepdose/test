@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мобильная Веб-Игра</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Главный экран с персонажем и питомцем -->
+        <div class="character-container">
+            <img id="character-img" src="img/skin1.png" class="character" alt="Персонаж">
+            <div class="pet-container">
+                <img id="pet-img" src="img/pet1.png" class="pet" alt="Питомец">
+            </div>
+        </div>
+
+        <!-- Кнопки выбора фона и персонажа рядом -->
+        <div class="button-container">
+            <button id="menu-button" onclick="toggleMenu()">Меню</button>
+            <button id="background-button" onclick="toggleBackgroundSelection()">Фон</button>
+        </div>
+
+        <!-- Раздел выбора фона -->
+        <div id="background-selection" class="background-selection">
+            <div class="background-controls">
+                <button onclick="changeBackground(-1)">←</button> <!-- Левая стрелочка -->
+                <button onclick="changeBackground(1)">→</button>  <!-- Правая стрелочка -->
+            </div>
+            <button id="select-background" onclick="selectBackground()">Выбрать</button> <!-- Кнопка выбора -->
+        </div>
+    </div>
+
+    <!-- Попап меню -->
+    <div id="menu-popup" class="menu-popup">
+        <button class="close-button" onclick="closeMenu()">X</button>
+        <div class="tab-buttons">
+            <button onclick="showTab('character')">Персонаж</button>
+            <button onclick="showTab('pets')">Питомцы</button>
+        </div>
+        <div id="character" class="tab-content active">
+            <div class="skin-preview">
+                <img id="selected-skin" src="skin1.png" alt="Скин">
+                <h3 id="skin-name">Скин 1</h3>
+                <button id="select-skin" onclick="selectSkin()">Выбрать</button>
+            </div>
+            <div class="skin-list">
+                <img src="skin1.png" onclick="previewSkin('skin1.png', 'Скин 1')">
+                <img src="skin2.png" onclick="previewSkin('skin2.png', 'Скин 2')">
+                <img src="skin3.png" onclick="previewSkin('skin3.png', 'Скин 3')">
+            </div>
+        </div>
+
+        <div id="pets" class="tab-content">
+            <div class="pet-preview">
+                <img id="selected-pet" src="pet1.png" alt="Питомец">
+                <h3 id="pet-name">Питомец 1</h3>
+                <button id="select-pet" onclick="selectPet()">Выбрать</button>
+            </div>
+            <div class="pet-list">
+                <img src="pet1.png" onclick="previewPet('pet1.png', 'Питомец 1')">
+                <img src="pet2.png" onclick="previewPet('pet2.png', 'Питомец 2')">
+                <img src="pet3.png" onclick="previewPet('pet3.png', 'Питомец 3')">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
