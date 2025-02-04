@@ -57,7 +57,7 @@ body {
 /* --- Контейнер кнопок выбора фона и персонажа --- */
 .button-container {
     position: absolute;
-    top: 10%;
+    top: 1%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -84,7 +84,7 @@ body {
 .background-selection {
     display: none;
     text-align: center;
-    margin-top: 650px;
+    margin-top: -350px;
     padding: 20px;
     border-radius: 10px;
 }
