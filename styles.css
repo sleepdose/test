@@ -84,7 +84,7 @@ body {
 .background-selection {
     display: none;
     text-align: center;
-    margin-top: -400px;
+    margin-top: -300px;
     padding: 20px;
     border-radius: 10px;
 }
